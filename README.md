@@ -31,7 +31,7 @@ Because in this game their will be a strong advantage for the first player so we
 
 ## Vision
 
-| Vison | Description                                                  |                                                              |
+| Vison | Description                                                  | Details                                                      |
 | ----- | ------------------------------------------------------------ | ------------------------------------------------------------ |
 | V1.0  | Players can choose: `Start` before the game, `Quit` and `Surrender` during the game. At the end of the game, winner will be declared. | `Start`: If players choose `Start`, game begains. `Quit`: If players choose `Quit`, game over, no winner declared. `Surrender`: If one player choose `Surrender`, the other player will be declared as winner directly. |
 | V2.0  | Players can choose: `Start` before the game, `Quit` and `Surrender`  and  `Save`  during the game. At the end of the game, winner will be declared. | `Save`: If playes choose `Save` , they could contine the saved game later. |
