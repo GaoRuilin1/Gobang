@@ -1,6 +1,6 @@
 # Proposal
 
-Team member: Gao Ruilin
+Team member: Gao Ruilin （3035772547）
 
 ​							Zhao Yazhou (3035772638)
 
