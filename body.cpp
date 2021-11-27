@@ -15,7 +15,7 @@ using namespace std;
 void print(int map[8][8]){
     for (int y = 0; y < 8; y ++) {
         cout << " ";
-        
+
         for (int x = 0; x < 8; x ++) {
             if (map[y][x] == 0) cout << "_ ";
             if (map[y][x] == 1) cout << "x ";   // player A
@@ -128,5 +128,28 @@ void enlarge_board(int map[8][8]);
 
 
 // 把最终情况存为一个文件
-void save_board(int map[8][8]);
+void save_board(int map[8][8]) {
+    ofstream fout;
+
+    fout.open("saved_board.txt");
+
+    if ( fout.fail() ) {
+        cout << "Error in file opening!" << endl;
+        exit(1);
+    }
+
+    for (int y = 0; y < 8; y ++) {
+        fout << " ";
+
+        for (int x = 0; x < 8; x ++) {
+            if (map[y][x] == 0) fout << "_ ";
+            if (map[y][x] == 1) fout << "x ";   // player A
+            if (map[y][x] == 2) fout << "o ";   // player B
+        }
+
+        fout << endl;
+    }
+
+    fout.close();
+}
 

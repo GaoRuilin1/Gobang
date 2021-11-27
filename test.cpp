@@ -1,6 +1,7 @@
 #include <iostream>
 #include <random>
 #include <time.h>
+#include <fstream>
 using namespace std;
 
 
@@ -41,10 +42,40 @@ int random_init(int map[8][8]){
     return AB;
 }
 
+// 把最终情况存为一个文件
+void save_board(int map[8][8]) {
+    ofstream fout;
+
+    fout.open("saved_board.txt");
+
+    if ( fout.fail() ) {
+        cout << "Error in file opening!" << endl;
+        exit(1);
+    }
+
+    for (int y = 0; y < 8; y ++) {
+        fout << " ";
+
+        for (int x = 0; x < 8; x ++) {
+            if (map[y][x] == 0) fout << "_ ";
+            if (map[y][x] == 1) fout << "x ";   // player A
+            if (map[y][x] == 2) fout << "o ";   // player B
+        }
+
+        fout << endl;
+    }
+
+    fout.close();
+
+}
+
+
+
 int main() {
     int map[8][8];
     int player;
     player = random_init(map);
     print_map(map);
+    save_board(map);
     return 0;
 }
