@@ -26,7 +26,7 @@ void B_load(int map[8][8], Point B);
 bool reload(Point i, int map[8][8]);
 
 
-bool gameOver(int map[8][8]);
+int gameOver(int map[8][8]);
 
 
 // 棋盘满了

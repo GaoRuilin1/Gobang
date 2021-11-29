@@ -7,6 +7,7 @@
 #include "body.h"
 using namespace std;
 
+const int num = 8;
 
 // 已经 de 完 bug
 // Function: print the whole board.
@@ -19,7 +20,7 @@ void print(int map[8][8]){
         for (int x = 0; x < 8; x ++) {
             if (map[y][x] == 0) cout << "_ ";
             if (map[y][x] == 1) cout << "x ";   // player A
-            if (map[y][x] == 2) cout << "o ";   // player B
+            if (map[y][x] == -1) cout << "o ";   // player B
         }
 
         cout << endl;
@@ -46,7 +47,7 @@ void B_load(int map[8][8], Point B){
     int x, y;
     x = B.x;
     y = B.y;
-    map[y][x] = 2;
+    map[y][x] = -1;
 }
 
 
@@ -59,7 +60,63 @@ bool reload(Point i, int map[8][8]);
 // Function: check if the game is over.
 // Input: a board
 // Output: whether game over
-bool gameOver(int map[8][8]);
+int gameOver(int map[8][8]) {
+
+    // five pieces in the same line.
+    int line = 0;
+    for (int y = 0; y < num; y++) {
+        for (int x = 0; x < num - 5; x++) {
+            for (int i = 0; i < 5; i ++) {
+                line += map[y][x + i];
+            } 
+        }
+    }
+
+    if (line == 4 ) {
+        return 1;
+    }
+    else if (line == -4) {
+        return 2;
+    }
+
+    // five piece in the same column
+    int column = 0;
+    for (int y = 0; y < num - 5; y++) {
+        for (int x = 0; x < num; x++) {
+            for (int i = 0; i < 5; i ++) {
+                column += map[y + i][x];
+            } 
+        }
+    }
+
+    if (column == 4 ) {
+        return 1;
+    }
+    else if (column == -4) {
+        return 2;
+    }
+
+    // 
+    int de = 0;
+    for (int y = 0; y < num - 5; y++) {
+        for (int x = 0; x < num - 5; x++) {
+            for (int i = 0; i < 5; i ++) {
+                column += map[y + i][x + 1];
+            } 
+        }
+    }
+    
+    if (de == 4 ) {
+        return 1;
+    }
+    else if (de == -4) {
+        return 2;
+    }
+
+    if (full(map)) return 3;
+
+    return 0;
+}
 
 
 // Function: chaeck if the board is full
@@ -118,7 +175,7 @@ int random_init(int map[8][8]){
     int AB = (rand() % 2);
 
     if (AB == 0) map[y][x] = 1;     // player A first
-    else map[y][x] = 2;             // player B first
+    else map[y][x] = -1;             // player B first
 
     return AB;
 }
@@ -144,7 +201,7 @@ void save_board(int map[8][8]) {
         for (int x = 0; x < 8; x ++) {
             if (map[y][x] == 0) fout << "_ ";
             if (map[y][x] == 1) fout << "x ";   // player A
-            if (map[y][x] == 2) fout << "o ";   // player B
+            if (map[y][x] == -1) fout << "o ";   // player B
         }
 
         fout << endl;
