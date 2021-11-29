@@ -1,0 +1,3 @@
+Players alternate turns placing a stone of their colour on an empty intersection. 
+The first stone's place and colour will be decided randomly. After the first stone being determined by the system, the player who have the other colour set his stone. Players place their stones in the empty place of the board seperately by given the coordinates, the x and y.
+Winner is the first player to form an unbroken chain of five stones horizontally, vertically, or diagonally. Placing so that a line of more than five stones of the same colour is created does not result in a win.
