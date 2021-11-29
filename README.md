@@ -1,8 +1,8 @@
-# Proposal
+# Go Bang Pro
 
 Team member: Gao Ruilin （3035772547）
 
-​							Zhao Yazhou (3035772638)
+​                           Zhao Yazhou (3035772638)
 
 Group 64 in ENGG1340 / COMP2113
 
@@ -16,14 +16,45 @@ Players alternate turns placing a stone of their color on an empty intersection.
 
 The winner will be the first player who build an unbroken chain of 5 stones horizontally, vertically, or diagonally.  
 
+## Quick start
+
+To compilate and execute this game, please type
+
+```makefile
+make main
+```
+
+To clean the generated files during the game, please type
+
+```makefile
+make clean
+```
+
 ## **Features to implement**  
 
-`initial the board`
-`print the board`
-`check if there is an unbroken chain of 5 stones horizontally, vertically, or diagonally, end the game and update the score`
-`Save and store the game status`
-`Read/get the game status`
-`Scoring system`  
+Requirements and our features.
+
+1. Generation of random game sets or events
+
+The board is initialised in random: which player will play first and the first position of the piece is generated randomly.
+
+2. Data structures for storing game status
+
+
+
+3. Dynamic memory management
+
+
+
+4. File input/output (e.g., for loading/saving game status)
+
+File input: at the begining of the game, a file named `rule.txt` is input for player reference.
+
+File output: when game is over, the board will be saved in a file named `saved_board.txt`.
+
+5. Program codes in multiple files
+
+There are files: `body.cpp`, `body.h`, `main.cpp` and `Makefile` for game generation. `body.cpp` contains the functions needed by `main.cpp`, and  `main.cpp` will include `body.cpp` to use the functions. To execute the codes, a Makefile is written.
 
 ## **Adjustments**
 
@@ -37,4 +68,3 @@ Because in this game their will be a strong advantage for the first player so we
 | V2.0  | Players can choose: `Start` before the game, `Quit` and `Surrender`  and  `Save`  during the game. At the end of the game, winner will be declared. | `Save`: If playes choose `Save` , they could contine the saved game later. |
 | V3.0  | Players can choose: `Start` , `Tutorial` before the game, `Quit` and `Surrender`  and  `Save`  during the game. At the end of the game, winner will be declared. | `Tutorial`: Players could get several tutorials from a document. |
 | V4.0  | A beautiful GUI will be developed.                           |                                                              |
-

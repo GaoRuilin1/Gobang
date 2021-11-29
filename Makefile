@@ -10,9 +10,9 @@ main: body.o main.o
 	g++ $(FLAGS) body.o main.o -o main
 
 clean:
-	rm -f main main.o body.o
+	rm -f main main.o body.o saved_board.txt
 
 tar:
-	tar main main.o body.o
+	tar main main.o body.o saved_board.txt
 
 .PHONY: clean tar
