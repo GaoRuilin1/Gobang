@@ -40,11 +40,12 @@ The board is initialised in random: which player will play first and the first p
 
 2. Data structures for storing game status
 
+The program imply "struct" to illustrate the points and use array to store the board.
 
 
 3. Dynamic memory management
 
-
+When the two players give the place they want to put their stones on, use dynamic varible to store the coordinates, x and y. After passing the value to the function, we delete it.
 
 4. File input/output (e.g., for loading/saving game status)
 
