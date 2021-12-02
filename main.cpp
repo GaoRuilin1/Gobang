@@ -14,28 +14,27 @@ int main() {
         for (int j = 0; j < 15; j++)
         {
             board[i][j] = count+1;
-            cout<<board[i][j]<<endl;
             count++;
         }
     }
-    
+
     cout << "Welcome to Gobang!" << endl;
-    cout << "Rule"<< endl;
-    cout << "****************************************************************"<<endl;
+    cout << "Rule" << endl;
+    cout << "****************************************************************" << endl;
 
     /* give the introduction and rules about our game -- Gobang 
     by opening the introduction.txt file */
     print_Rules_intro();
 
-    cout << "****************************************************************\n"<<endl;
-    cout << "Player A use x | palyer B use o"<<endl;
+    cout << "****************************************************************\n" << endl;
+    cout << "Player A use x | palyer B use o" << endl;
     cout << "***The first stone will be randomly generated!***" << endl;
 
     // If the random position is 'o', 'x' goes first.
     if (random_init(board) == 0){
         print(board);
 
-        cout << "B's turn"<<endl;
+        cout << "B's turn" << endl;
 
         /* using dynamic memory to show x and y coordinate given on
         the board without using internal memory */
@@ -68,7 +67,7 @@ int main() {
             A_load(board, point); 
 
             delete point;
-            
+
             roll+=1;                // counting times
 
             /*if the game end at the A , A wins*/

@@ -190,11 +190,12 @@ void save_board(int map[15][15]) {
         exit(1);
     }
 
+    fout << "There is the final board:" << endl;
     for (int y = 0; y < 15; y ++) {
         fout << " ";
 
         for (int x = 0; x < 15; x ++) {
-            if (map[y][x] == 0) fout << "_ ";
+            if (map[y][x] > 0) fout << "_ ";
             if (map[y][x] == -1) fout << "x ";   // player A
             if (map[y][x] == -2) fout << "o ";   // player B
         }

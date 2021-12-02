@@ -22,6 +22,7 @@ To compilate and execute this game, please type
 
 ```makefile
 make main
+./main
 ```
 
 To clean the generated files during the game, please type
