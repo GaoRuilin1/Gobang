@@ -1,8 +1,8 @@
 # Go Bang Pro
 
-Team member: Gao Ruilin （3035772547）
-
-​                           Zhao Yazhou (3035772638)
+Team member: 
+Gao Ruilin （3035772547）
+Zhao Yazhou (3035772638)
 
 Group 64 in ENGG1340 / COMP2113
 
@@ -12,9 +12,11 @@ Go Bang is an abstract two-player strategy board game, traditionally played with
 
 ## **Rules**  
 
-Players alternate turns placing a stone of their color on an empty intersection. Black plays first. 
+Players alternate turns placing a stone of their type on an empty intersection.
 
 The winner will be the first player who build an unbroken chain of 5 stones horizontally, vertically, or diagonally.  
+
+<img width="739" alt="截屏2021-12-02 23 03 15" src="https://user-images.githubusercontent.com/76484768/144447538-bdadcdc0-8d99-448f-bb0f-09557826f533.png">
 
 ## Quick start
 
@@ -54,6 +56,8 @@ File input: at the begining of the game, a file named `rule.txt` is input for pl
 
 File output: when game is over, the board will be saved in a file named `saved_board.txt`.
 
+<img width="570" alt="截屏2021-12-02 23 01 49" src="https://user-images.githubusercontent.com/76484768/144447254-fc258152-4b9c-41f4-a320-75d01d75cb1e.png">
+
 5. Program codes in multiple files
 
 There are files: `body.cpp`, `body.h`, `main.cpp` and `Makefile` for game generation. `body.cpp` contains the functions needed by `main.cpp`, and  `main.cpp` will include `body.cpp` to use the functions. To execute the codes, a Makefile is written.
@@ -61,12 +65,3 @@ There are files: `body.cpp`, `body.h`, `main.cpp` and `Makefile` for game genera
 ## **Adjustments**
 
 Because in this game their will be a strong advantage for the first player so we adjust the “Pro” opening rule. This rule restrict the first player to place the first stone at the center of the board.The second stone had to be placed at least three intersections away from the center.
-
-## Vision
-
-| Vison | Description                                                  | Details                                                      |
-| ----- | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| V1.0  | Players can choose: `Start` before the game, `Quit` and `Surrender` during the game. At the end of the game, winner will be declared. | `Start`: If players choose `Start`, game begains. `Quit`: If players choose `Quit`, game over, no winner declared. `Surrender`: If one player choose `Surrender`, the other player will be declared as winner directly. |
-| V2.0  | Players can choose: `Start` before the game, `Quit` and `Surrender`  and  `Save`  during the game. At the end of the game, winner will be declared. | `Save`: If playes choose `Save` , they could contine the saved game later. |
-| V3.0  | Players can choose: `Start` , `Tutorial` before the game, `Quit` and `Surrender`  and  `Save`  during the game. At the end of the game, winner will be declared. | `Tutorial`: Players could get several tutorials from a document. |
-| V4.0  | A beautiful GUI will be developed.                           |                                                              |
