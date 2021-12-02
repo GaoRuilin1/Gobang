@@ -37,20 +37,20 @@ make clean
 
 Requirements and our features.
 
-1. Generation of random game sets or events
+#### 1. Generation of random game sets or events
 
 The board is initialised in random: which player will play first and the first position of the piece is generated randomly.
 
-2. Data structures for storing game status
+#### 2. Data structures for storing game status
 
 The program imply "struct" to illustrate the points and use array to store the board.
 
 
-3. Dynamic memory management
+#### 3. Dynamic memory management
 
 When the two players give the place they want to put their stones on, use dynamic varible to store the coordinates, x and y. After passing the value to the function, we delete it.
 
-4. File input/output (e.g., for loading/saving game status)
+#### 4. File input/output (e.g., for loading/saving game status)
 
 File input: at the begining of the game, a file named `rule.txt` is input for player reference.
 
@@ -58,7 +58,7 @@ File output: when game is over, the board will be saved in a file named `saved_b
 
 <img width="570" alt="截屏2021-12-02 23 01 49" src="https://user-images.githubusercontent.com/76484768/144447254-fc258152-4b9c-41f4-a320-75d01d75cb1e.png">
 
-5. Program codes in multiple files
+#### 5. Program codes in multiple files
 
 There are files: `body.cpp`, `body.h`, `main.cpp` and `Makefile` for game generation. `body.cpp` contains the functions needed by `main.cpp`, and  `main.cpp` will include `body.cpp` to use the functions. To execute the codes, a Makefile is written.
 
