@@ -13,14 +13,14 @@ const int num = 8;
 // Function: print the whole board.
 // No input.
 // Output: the whole board.
-void print(int map[8][8]){
-    for (int y = 0; y < 8; y ++) {
+void print(int map[15][15]){
+    for (int y = 0; y < 15; y ++) {
         cout << " ";
 
         for (int x = 0; x < 8; x ++) {
             if (map[y][x] == 0) cout << "_ ";
-            if (map[y][x] == 1) cout << "x ";   // player A
-            if (map[y][x] == -1) cout << "o ";   // player B
+            if (map[y][x] == -1) cout << "x ";   // player A
+            if (map[y][x] == -2) cout << "o ";   // player B
         }
 
         cout << endl;
@@ -31,7 +31,7 @@ void print(int map[8][8]){
 // Function: get the position player A chooses, load it to the board
 // Input: A postison, the board
 // No output while change the board
-void A_load(int map[8][8], Point A){
+void A_load(int map[15][15], Point A){
     int x, y;
     x = A.x;
     y = A.y;
@@ -43,7 +43,7 @@ void A_load(int map[8][8], Point A){
 // Function: get the position player B chooses, load it to the board
 // Input: B postison, the board
 // No output while change the board
-void B_load(int map[8][8], Point B){
+void B_load(int map[15][15], Point B){
     int x, y;
     x = B.x;
     y = B.y;
@@ -161,31 +161,24 @@ void print_Rules_intro(){
 // Function: init the board, randomly decide which palyer should go first and the position of the first piece.
 // Input: an empty board
 // Output: which palyer play first. if AB = 0, A first, else, B first.
-int random_init(int map[8][8]){
-    for (int y = 0; y < 8; y ++) {
-        for (int x = 0; x < 8; x ++) {
-            map[y][x] = 0;
-        }
-    }
+int random_init(int map[15][15]){
 
     srand((unsigned)time(NULL));
 
-    int x = (rand() % 8);
-    int y = (rand() % 8);
+    int x = (rand() % 15);
+    int y = (rand() % 15);
     int AB = (rand() % 2);
 
-    if (AB == 0) map[y][x] = 1;     // player A first
-    else map[y][x] = -1;             // player B first
+    if (AB == 0) map[y][x] = -1;     // player A first
+    else map[y][x] = -2;             // player B first
 
     return AB;
 }
 
 
-void enlarge_board(int map[8][8]);
-
 
 // 把最终情况存为一个文件
-void save_board(int map[8][8]) {
+void save_board(int map[15][15]) {
     ofstream fout;
 
     fout.open("saved_board.txt");
@@ -195,13 +188,13 @@ void save_board(int map[8][8]) {
         exit(1);
     }
 
-    for (int y = 0; y < 8; y ++) {
+    for (int y = 0; y < 15; y ++) {
         fout << " ";
 
-        for (int x = 0; x < 8; x ++) {
+        for (int x = 0; x < 15; x ++) {
             if (map[y][x] == 0) fout << "_ ";
-            if (map[y][x] == 1) fout << "x ";   // player A
-            if (map[y][x] == -1) fout << "o ";   // player B
+            if (map[y][x] == -1) fout << "x ";   // player A
+            if (map[y][x] == -2) fout << "o ";   // player B
         }
 
         fout << endl;
